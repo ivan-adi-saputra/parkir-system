@@ -10,6 +10,7 @@ const connectDB = require("./config/connection");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const userRouter = require("./api/v1/user/route");
+const parkirRouter = require("./api/v1/parkir/route");
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/parkir", parkirRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
